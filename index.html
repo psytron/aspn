@@ -38,6 +38,21 @@
                 font-size: 1.1rem;
                 letter-spacing: 0.02em;
             }
+            .price-arrow {
+                font-size: 0.98rem;
+                margin-left: 7px;
+                vertical-align: middle;
+                display: inline-block;
+            }
+            .arrow-up {
+                color: #26be47;
+            }
+            .arrow-down {
+                color: #e04a41;
+            }
+            .price-thin {
+                font-weight: 200 !important;
+            }
         </style>
     </head>
     <body>
@@ -46,11 +61,17 @@
             <div style="display: flex; gap: 18px; margin-top: 28px;">
                 <div style="background: #fffbe7; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 18px 28px; display: flex; flex-direction: column; align-items: center; min-width: 140px; font-family: Helvetica, Arial, sans-serif;">
                     <span style="font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; color: #ffffff; margin-bottom: 4px; font-family: Helvetica, Arial, sans-serif;">ASGX</span>
-                    <span style="font-size: 1.32rem; font-weight: 700; color: #bfa13b; font-family: Helvetica, Arial, sans-serif;">$3,950.10</span>
+                    <span class="price-thin" style="font-size: 1.32rem; color: #bfa13b; font-family: Helvetica, Arial, sans-serif;">
+                        $3,950.10
+                        <span class="price-arrow arrow-up">&#8593;</span>
+                    </span>
                 </div>
                 <div style="background: #f8fafd; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px 28px; display: flex; flex-direction: column; align-items: center; min-width: 140px; font-family: Helvetica, Arial, sans-serif;">
                     <span style="font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; color: #ffffff; margin-bottom: 4px; font-family: Helvetica, Arial, sans-serif;">ASPN</span>
-                    <span style="font-size: 1.32rem; font-weight: 700; color: #a7adba; font-family: Helvetica, Arial, sans-serif;">$47.31</span>
+                    <span class="price-thin" style="font-size: 1.32rem; color: #a7adba; font-family: Helvetica, Arial, sans-serif;">
+                        $47.31
+                        <span class="price-arrow arrow-down">&#8595;</span>
+                    </span>
                 </div>
             </div>
         </div>
