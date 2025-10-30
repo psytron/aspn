@@ -70,45 +70,138 @@
                 align-items: center;
                 font-variant-numeric: tabular-nums;
             }
+
+            /* --- HEADER BAR STYLES --- */
+            .header-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                min-width: 0;
+                box-sizing: border-box;
+                height: 46px;
+                /* 0.7 opacity = rgba(0,0,0,0.7) */
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                /* Increase right padding to ensure button stays inside */
+                padding-left: 12px;
+                padding-right: 16px;
+                z-index: 100;
+                box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+            }
+
+            .header-bar-logo {
+                display: flex;
+                align-items: center;
+                gap: 9px;
+            }
+
+            .header-bar-logo img {
+                height: 28px;
+                width: auto;
+                vertical-align: middle;
+            }
+
+            .header-login-btn {
+                background: #222;
+                color: #fff;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                padding: 6px 19px;
+                font-size: 1rem;
+                font-family: Helvetica, Arial, sans-serif;
+                cursor: pointer;
+                transition: background 0.14s;
+                font-weight: 500;
+                letter-spacing: 0.01em;
+                box-shadow: 0 0.5px 3px rgba(0, 0, 0, 0.04);
+                min-width: 80px;
+                margin-right: 0;
+                /* Prevent button from overflowing the bar */
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .header-login-btn:hover,
+            .header-login-btn:focus {
+                background: #333;
+            }
+
+            /* To give space for the fixed header */
+            .main-content {
+                margin-top: 46px;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+            }
+
+            /* Prevent horizontal scroll due to overflows */
+            @media (max-width: 430px) {
+                .header-bar {
+                    padding-left: 6px;
+                    padding-right: 8px;
+                }
+                .main-content {
+                    width: 100vw;
+                }
+                .header-login-btn {
+                    min-width: 64px;
+                    padding: 6px 10px;
+                    font-size: 0.98rem;
+                }
+            }
+
         </style>
     </head>
     <body>
-        <div class="center-image">
-            <img src="/img/asnlg.png" alt="Aspenite">
-            <div style="display: flex; gap: 18px; margin-top: 28px;">
-                <div style="background: #fffbe7; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 18px 28px; display: flex; flex-direction: column; align-items: center; min-width: 140px; font-family: Helvetica, Arial, sans-serif;">
-                    <span style="font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; color: #ffffff; margin-bottom: 4px; font-family: Helvetica, Arial, sans-serif;">ASGX</span>
-                    <span class="price-thin" style="font-size: 1.32rem; color: #bfa13b; font-family: Helvetica, Arial, sans-serif;">
-                        <span class="price-container">
-                            $3,950.10
-                            <span class="price-arrow arrow-up">&#8593;</span>
-                        </span>
-                    </span>
-                </div>
-                <div style="background: #f8fafd; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px 28px; display: flex; flex-direction: column; align-items: center; min-width: 140px; font-family: Helvetica, Arial, sans-serif;">
-                    <span style="font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; color: #ffffff; margin-bottom: 4px; font-family: Helvetica, Arial, sans-serif;">ASPN</span>
-                    <span class="price-thin" style="font-size: 1.32rem; color: #a7adba; font-family: Helvetica, Arial, sans-serif;">
-                        <span class="price-container">
-                            $47.31
-                            <span class="price-arrow arrow-down">&#8595;</span>
-                        </span>
-                    </span>
-                </div>
+        <div class="header-bar">
+            <div class="header-bar-logo">
+                <img src="/img/asnlg.png" alt="Aspenite small logo">
             </div>
-            <div class="copyright-footer" style="
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100vw;
-                text-align: center;
-                background: rgba(255,255,255,0.94);
-                padding: 10px 0 8px 0;
-                font-size: 0.92rem;
-                font-family: Helvetica, Arial, sans-serif;
-                z-index: 99;
-                box-shadow: 0 -2px 14px rgba(0,0,0,0.07);
-            ">
-                &copy; 2025 Aspenite
+            <button class="header-login-btn">Login</button>
+        </div>
+        <div class="main-content">
+            <div class="center-image">
+                <img src="/img/asnlg.png" alt="Aspenite">
+                <div style="display: flex; gap: 18px; margin-top: 28px;">
+                    <div style="background: #000000b3; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 18px 28px; display: flex; flex-direction: column; align-items: center; min-width: 140px; font-family: Helvetica, Arial, sans-serif;">
+                        <span style="font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; color: #ffffff; margin-bottom: 4px; font-family: Helvetica, Arial, sans-serif;">ASGX</span>
+                        <span class="price-thin" style="font-size: 1.32rem; color: #bfa13b; font-family: Helvetica, Arial, sans-serif;">
+                            <span class="price-container">
+                                $3,950.10
+                                <span class="price-arrow arrow-up">&#8593;</span>
+                            </span>
+                        </span>
+                    </div>
+                    <div style="background: #000000b3; border-radius: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 18px 28px; display: flex; flex-direction: column; align-items: center; min-width: 140px; font-family: Helvetica, Arial, sans-serif;">
+                        <span style="font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; color: #ffffff; margin-bottom: 4px; font-family: Helvetica, Arial, sans-serif;">ASPN</span>
+                        <span class="price-thin" style="font-size: 1.32rem; color: #a7adba; font-family: Helvetica, Arial, sans-serif;">
+                            <span class="price-container">
+                                $47.31
+                                <span class="price-arrow arrow-down">&#8595;</span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="copyright-footer" style="
+                    position: fixed;
+                    left: 0;
+                    bottom: 0;
+                    width: 100vw;
+                    text-align: center;
+                    background: rgba(0, 0, 0, 0.7);
+                    padding: 10px 0 8px 0;
+                    font-size: 0.92rem;
+                    font-family: Helvetica, Arial, sans-serif;
+                    z-index: 99;
+                    box-shadow: 0 -2px 14px rgba(0,0,0,0.07);
+                    color: #fff;
+                ">
+                    &copy; 2025 Aspenite
+                </div>
             </div>
         </div>
     </body>
